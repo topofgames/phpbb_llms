@@ -107,7 +107,7 @@ The cache is automatically cleared when:
 ## Support
 
 For issues or questions, please create an issue on GitHub:
-https://github.com/topofgames/phpbb-llms
+https://github.com/topofgames/phpbb_llms
 
 ## License
 
