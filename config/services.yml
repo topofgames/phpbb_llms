@@ -1,0 +1,64 @@
+services:
+    topofgames.phpbb_llms.controller.main:
+        class: topofgames\phpbb_llms\controller\main_controller
+        arguments:
+            - '@config'
+            - '@dbal.conn'
+            - '@auth'
+            - '@user'
+            - '@language'
+            - '@request'
+            - '@topofgames.phpbb_llms.service.generator'
+            - '@cache.driver'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+
+    topofgames.phpbb_llms.controller.markdown:
+        class: topofgames\phpbb_llms\controller\markdown_controller
+        arguments:
+            - '@config'
+            - '@dbal.conn'
+            - '@auth'
+            - '@user'
+            - '@language'
+            - '@request'
+            - '@topofgames.phpbb_llms.service.markdown_converter'
+            - '@cache.driver'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+
+    topofgames.phpbb_llms.service.generator:
+        class: topofgames\phpbb_llms\service\llmstxt_generator
+        arguments:
+            - '@config'
+            - '@dbal.conn'
+            - '@auth'
+            - '@user'
+            - '@language'
+            - '@cache.driver'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+            - '%core.table_prefix%'
+
+    topofgames.phpbb_llms.service.markdown_converter:
+        class: topofgames\phpbb_llms\service\markdown_converter
+        arguments:
+            - '@config'
+            - '@dbal.conn'
+            - '@user'
+            - '@language'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+
+    topofgames.phpbb_llms.acp.main_module:
+        class: topofgames\phpbb_llms\acp\main_module
+        tags:
+            - { name: acp.module }
+
+    topofgames.phpbb_llms.event.main_listener:
+        class: topofgames\phpbb_llms\event\main_listener
+        arguments:
+            - '@cache.driver'
+            - '@config'
+        tags:
+            - { name: event.listener }

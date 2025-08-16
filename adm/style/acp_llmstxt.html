@@ -1,0 +1,105 @@
+<!-- INCLUDE overall_header.html -->
+
+<h1>{L_ACP_LLMSTXT_SETTINGS}</h1>
+
+<p>{L_ACP_LLMSTXT_SETTINGS_EXPLAIN}</p>
+
+<form id="acp_llmstxt" method="post" action="{U_ACTION}">
+
+<fieldset>
+    <legend>{L_ACP_LLMSTXT_GENERAL_SETTINGS}</legend>
+    
+    <dl>
+        <dt><label for="llmstxt_enabled">{L_ACP_LLMSTXT_ENABLED}{L_COLON}</label><br />
+        <span>{L_ACP_LLMSTXT_ENABLED_EXPLAIN}</span></dt>
+        <dd>
+            <label><input type="radio" class="radio" name="llmstxt_enabled" value="1"<!-- IF LLMSTXT_ENABLED --> checked="checked"<!-- ENDIF --> /> {L_YES}</label>
+            <label><input type="radio" class="radio" name="llmstxt_enabled" value="0"<!-- IF not LLMSTXT_ENABLED --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+        </dd>
+    </dl>
+
+    <dl>
+        <dt><label for="llmstxt_header">{L_ACP_LLMSTXT_HEADER}{L_COLON}</label><br />
+        <span>{L_ACP_LLMSTXT_HEADER_EXPLAIN}</span></dt>
+        <dd><textarea name="llmstxt_header" id="llmstxt_header" rows="5" cols="45">{LLMSTXT_HEADER}</textarea></dd>
+    </dl>
+</fieldset>
+
+<fieldset>
+    <legend>{L_ACP_LLMSTXT_CONTENT_SETTINGS}</legend>
+    
+    <dl>
+        <dt><label for="llmstxt_include_stats">{L_ACP_LLMSTXT_INCLUDE_STATS}{L_COLON}</label><br />
+        <span>{L_ACP_LLMSTXT_INCLUDE_STATS_EXPLAIN}</span></dt>
+        <dd>
+            <label><input type="radio" class="radio" name="llmstxt_include_stats" value="1"<!-- IF LLMSTXT_INCLUDE_STATS --> checked="checked"<!-- ENDIF --> /> {L_YES}</label>
+            <label><input type="radio" class="radio" name="llmstxt_include_stats" value="0"<!-- IF not LLMSTXT_INCLUDE_STATS --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+        </dd>
+    </dl>
+
+    <dl>
+        <dt><label for="llmstxt_include_recent">{L_ACP_LLMSTXT_INCLUDE_RECENT}{L_COLON}</label><br />
+        <span>{L_ACP_LLMSTXT_INCLUDE_RECENT_EXPLAIN}</span></dt>
+        <dd>
+            <label><input type="radio" class="radio" name="llmstxt_include_recent" value="1"<!-- IF LLMSTXT_INCLUDE_RECENT --> checked="checked"<!-- ENDIF --> /> {L_YES}</label>
+            <label><input type="radio" class="radio" name="llmstxt_include_recent" value="0"<!-- IF not LLMSTXT_INCLUDE_RECENT --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+        </dd>
+    </dl>
+
+    <dl>
+        <dt><label for="llmstxt_max_forums">{L_ACP_LLMSTXT_MAX_FORUMS}{L_COLON}</label><br />
+        <span>{L_ACP_LLMSTXT_MAX_FORUMS_EXPLAIN}</span></dt>
+        <dd><input type="number" name="llmstxt_max_forums" id="llmstxt_max_forums" value="{LLMSTXT_MAX_FORUMS}" min="1" max="100" /></dd>
+    </dl>
+
+    <dl>
+        <dt><label for="llmstxt_max_topics">{L_ACP_LLMSTXT_MAX_TOPICS}{L_COLON}</label><br />
+        <span>{L_ACP_LLMSTXT_MAX_TOPICS_EXPLAIN}</span></dt>
+        <dd><input type="number" name="llmstxt_max_topics" id="llmstxt_max_topics" value="{LLMSTXT_MAX_TOPICS}" min="1" max="50" /></dd>
+    </dl>
+
+    <dl>
+        <dt><label for="llmstxt_max_announcements">{L_ACP_LLMSTXT_MAX_ANNOUNCEMENTS}{L_COLON}</label><br />
+        <span>{L_ACP_LLMSTXT_MAX_ANNOUNCEMENTS_EXPLAIN}</span></dt>
+        <dd><input type="number" name="llmstxt_max_announcements" id="llmstxt_max_announcements" value="{LLMSTXT_MAX_ANNOUNCEMENTS}" min="0" max="20" /></dd>
+    </dl>
+</fieldset>
+
+<fieldset>
+    <legend>{L_ACP_LLMSTXT_CACHE_SETTINGS}</legend>
+    
+    <dl>
+        <dt><label for="llmstxt_cache_time">{L_ACP_LLMSTXT_CACHE_TIME}{L_COLON}</label><br />
+        <span>{L_ACP_LLMSTXT_CACHE_TIME_EXPLAIN}</span></dt>
+        <dd><input type="number" name="llmstxt_cache_time" id="llmstxt_cache_time" value="{LLMSTXT_CACHE_TIME}" min="0" max="86400" /> {L_SECONDS}</dd>
+    </dl>
+
+    <dl>
+        <dt><label for="llmstxt_cache_time_full">{L_ACP_LLMSTXT_CACHE_TIME_FULL}{L_COLON}</label><br />
+        <span>{L_ACP_LLMSTXT_CACHE_TIME_FULL_EXPLAIN}</span></dt>
+        <dd><input type="number" name="llmstxt_cache_time_full" id="llmstxt_cache_time_full" value="{LLMSTXT_CACHE_TIME_FULL}" min="0" max="86400" /> {L_SECONDS}</dd>
+    </dl>
+</fieldset>
+
+<fieldset>
+    <legend>{L_ACP_LLMSTXT_ACCESS_URLS}</legend>
+    <p>{L_ACP_LLMSTXT_ACCESS_URLS_EXPLAIN}</p>
+    <dl>
+        <dt>{L_ACP_LLMSTXT_MAIN_URL}{L_COLON}</dt>
+        <dd><a href="{LLMSTXT_URL}" target="_blank">{LLMSTXT_URL}</a></dd>
+    </dl>
+    <dl>
+        <dt>{L_ACP_LLMSTXT_FULL_URL}{L_COLON}</dt>
+        <dd><a href="{LLMSTXT_FULL_URL}" target="_blank">{LLMSTXT_FULL_URL}</a></dd>
+    </dl>
+</fieldset>
+
+<fieldset class="submit-buttons">
+    <input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
+    <input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
+    {S_FORM_TOKEN}
+</fieldset>
+
+</form>
+
+<!-- INCLUDE overall_footer.html -->

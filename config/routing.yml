@@ -1,0 +1,19 @@
+topofgames_phpbb_llms_main:
+    path: /llms.txt
+    defaults: { _controller: topofgames.phpbb_llms.controller.main:handle_llms_txt }
+
+topofgames_phpbb_llms_full:
+    path: /llms-full.txt
+    defaults: { _controller: topofgames.phpbb_llms.controller.main:handle_llms_full }
+
+topofgames_phpbb_llms_markdown_viewforum:
+    path: /viewforum.php.md
+    defaults: { _controller: topofgames.phpbb_llms.controller.markdown:handle_forum_markdown }
+    requirements:
+        f: \d+
+
+topofgames_phpbb_llms_markdown_viewtopic:
+    path: /viewtopic.php.md
+    defaults: { _controller: topofgames.phpbb_llms.controller.markdown:handle_topic_markdown }
+    requirements:
+        t: \d+
