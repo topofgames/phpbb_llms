@@ -47,8 +47,8 @@ Once enabled, your forum will provide:
 
 - `/llms.txt` - Main documentation file with forum structure
 - `/llms-full.txt` - Extended documentation with additional details
-- `/viewforum.php?f=X.md` - Markdown version of forum pages
-- `/viewtopic.php?t=X.md` - Markdown version of topic pages
+- `/viewforum.php.md?f=X` - Markdown version of forum pages
+- `/viewtopic.php.md?t=X` - Markdown version of topic pages
 
 ## Permissions
 
